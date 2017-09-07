@@ -5,15 +5,16 @@ import VueRouter from 'vue-router';
 import App from './App.vue';
 
 
-import login from './components/account/login.vue';
-import register from './components/account/register.vue';
+import home from './components/Home.vue';
+import cart from './components/shopcar/cart.vue';
 Vue.use(VueRouter);
 
 var router=new VueRouter({
+	linkActiveClass:'mui-active',//改变路由激活时的class名称
 	routes:[
-		{path:'/login',component:login},
-		{path:'/register',component:register}
-	]
+		{path:'/home',component:home},
+		{path:'/cart',component:cart}
+	]  
 })
 //注册mint-ui
 import 'mint-ui/lib/style.min.css'
@@ -22,6 +23,16 @@ Vue.use(mintui);
 //注册MUI
 
 import '../statics/mui/css/mui.css';
+import '../statics/mui/css/icons-extra.css'
+//导入当前系统的全部基本样式
+import '../statics/css/site.css';
+
+//导入vue-resource 实现ajax请求
+import vueResource from 'vue-resource';	
+
+Vue.use(vueResource);
+
+
 // 3.0 利用Vue对象进行解析渲染
 new Vue({
 	el:'#app',

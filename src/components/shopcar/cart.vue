@@ -1,7 +1,7 @@
 <template>
-     <div>
-         <h1>登录组件页面</h1>
-     </div>
+    <div>
+        <h1>购物车</h1>
+    </div>
 </template>
 <script>
 export default {
@@ -11,3 +11,5 @@ export default {
 <style scoped>
 
 </style>
+
+
