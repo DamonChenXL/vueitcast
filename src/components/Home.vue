@@ -3,7 +3,10 @@
         <!-- 轮播图 -->
         <mt-swipe :auto="4000">
             <mt-swipe-item v-for="item in lunbo">
-                <img v-bind:src="item.img">
+                <a :href="item.url">
+                    <img v-bind:src="item.img">
+                </a>
+
             </mt-swipe-item>
         </mt-swipe>
         <!-- 九宫格 -->
@@ -35,7 +38,6 @@
                         <div class="mui-media-body">留言反馈</div>
                     </router-link>
                 </li>
-               
 
             </ul>
         </div>
@@ -115,9 +117,11 @@ export default {
 .mui-icon-email:before {
     background-image: url('../../statics/imgs/2.png');
 }
-.mui-icon-chatbubble:before{
+
+.mui-icon-chatbubble:before {
     background-image: url('../../statics/imgs/3.png');
 }
+
 .mui-icon-location:before {
     background-image: url('../../statics/imgs/4.png');
 }

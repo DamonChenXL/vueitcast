@@ -7,13 +7,16 @@ import App from './App.vue';
 
 import home from './components/Home.vue';
 import cart from './components/shopcar/cart.vue';
+import newslist from './components/news/newslist.vue';
 Vue.use(VueRouter);
 
 var router=new VueRouter({
 	linkActiveClass:'mui-active',//改变路由激活时的class名称
 	routes:[
+		{path:'/',redirect:'/home'},
 		{path:'/home',component:home},
-		{path:'/cart',component:cart}
+		{path:'/cart',component:cart},
+		{path:'/news/newslist',component:newslist}
 	]  
 })
 //注册mint-ui
@@ -32,6 +35,13 @@ import vueResource from 'vue-resource';
 
 Vue.use(vueResource);
 
+
+//全局过滤器实现日期格式化
+import moment from 'moment';
+Vue.filter('datefmt',function(input,fmtstring){
+   //使用momentjs类库实现日期格式化
+    return moment(input).format(fmtstring);
+});
 
 // 3.0 利用Vue对象进行解析渲染
 new Vue({

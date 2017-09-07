@@ -29,23 +29,17 @@
 
 <script>
 // 按需导入
-import calc from './calc.js';
-import { Toast } from 'mint-ui';
+// import calc from './calc.js';
+// import { Toast } from 'mint-ui';
 // 负责导出 .vue这个组件对象(它本质上是一个Vue对象,所以Vue中该定义的元素都可以使用)
 export default {  // es6的导出对象的写法
 	data() {  //等价于 es5的 data:function(){
 		return {
-			msg: 'hello vuejs'
+			
 		}
 	},
 	methods: {
-		add: calc.add,
-		substrict: calc.substrict,
-		tip: function() {
-			Toast({
-				message: '你好啊'
-			})
-		}
+		
 
 	},
 	created() {
