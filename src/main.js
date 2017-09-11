@@ -8,6 +8,7 @@ import App from './App.vue';
 import home from './components/Home.vue';
 import cart from './components/shopcar/cart.vue';
 import newslist from './components/news/newslist.vue';
+import newsinfo from './components/news/newsinfo.vue';
 Vue.use(VueRouter);
 
 var router=new VueRouter({
@@ -16,7 +17,8 @@ var router=new VueRouter({
 		{path:'/',redirect:'/home'},
 		{path:'/home',component:home},
 		{path:'/cart',component:cart},
-		{path:'/news/newslist',component:newslist}
+		{path:'/news/newslist',component:newslist},
+		{path:'/news/newsinfo/:id',component:newsinfo}
 	]  
 })
 //注册mint-ui
