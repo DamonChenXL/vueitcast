@@ -1,14 +1,7 @@
 <template>
     <div>
         <!-- 轮播图 -->
-        <mt-swipe :auto="4000">
-            <mt-swipe-item v-for="item in lunbo">
-                <a :href="item.url">
-                    <img v-bind:src="item.img">
-                </a>
-
-            </mt-swipe-item>
-        </mt-swipe>
+        <slider :imgs="lunbo"></slider>
         <!-- 九宫格 -->
         <div class="mui-content">
             <ul class="mui-table-view mui-grid-view mui-grid-9">
@@ -46,7 +39,11 @@
 <script>
 import { Toast } from 'mint-ui';
 import common from '../kits/common.js';
+import slider from './subcom/slider.vue';
 export default {
+    components: {
+        slider
+    },
     data() {
         return {
             lunbo: []
@@ -58,7 +55,7 @@ export default {
     methods: {
         getimgs() {
             //实现轮播组件的数据请求
-            var url = common.apidomain+'/api/getlunbo';
+            var url = common.apidomain + '/api/getlunbo';
 
             this.$http.get(url).then(function(response) {
                 var data = response.body;
@@ -73,19 +70,7 @@ export default {
 }
 </script>
 <style scoped>
-.mint-swipe {
-    height: 250px;
-}
 
-.mint-swipe-item img {
-    width: 100%;
-    height: 100%;
-}
-
-.mint-swipe-item {
-    width: 100%;
-    height: 100%;
-}
 
 .mui-content,
 .mui-content ul {
